@@ -8,7 +8,7 @@ class MyServer(BaseHTTPRequestHandler):
 
     def __get_index(self):
         return """
-        <!doctype html>
+         <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
