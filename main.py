@@ -51,7 +51,7 @@ class MyServer(BaseHTTPRequestHandler):
             height: -webkit-fill-available;
             max-height: 100vh;
             overflow-x: auto;
-            overflow-y: hidden;
+            overflow-y: scoll;
         }
 
         .b-example-divider {
@@ -269,93 +269,176 @@ class MyServer(BaseHTTPRequestHandler):
     <div class="b-example-divider"></div>
 
     <div class="container">
-    <header>
-        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <h1 class="display-4 fw-normal text-body-emphasis">Главная</h1>
-            <p class="fs-5 text-body-secondary">Вы находитесь на сайте, предназначенном для продажи товаров</p>
-        </div>
-    </header>
+        <header>
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <h1 class="display-4 fw-normal text-body-emphasis">Главная</h1>
+                <p class="fs-5 text-body-secondary">Вы находитесь на сайте, предназначенном для продажи товаров</p>
+            </div>
+        </header>
 
-    <main class="row">
-
-        <div class="col-4">
-            <div class="card mb-4 rounded-3 shadow-sm text-center">
-                <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Товар 1</h4>
+        <main class="row">
+            <div class="row text-center">
+                <div class="col-4">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Товар 1</h4>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title pricing-card-title">$100</h2>
+                            <p>
+                                10 users included,
+                                2 GB of storage,
+                                Email support,
+                                Help center access
+                            </p>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-primary btn-success text-white">Купить</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h2 class="card-title pricing-card-title">$100</h2>
-                    <p>
-                        10 users included,
-                        2 GB of storage,
-                        Email support,
-                        Help center access
+                <div class="col-5">
+                    <form>
+                  <div class="mb-3">
+                    <label for="exampleInputName" class="form-label">Имя</label>
+                    <input type="text" class="form-control" id="exampleInputName">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+                </div>
+            </div>
+
+        <div class="container-fluid">
+                <header>
+                    <div class="pricing-header p-1 pb-md-1 mx-auto">
+                        <p class="fs-5 text-body-secondary">FAQ</p>
+                    </div>
+                </header>
+            </main>
+                <p class="d-flex gap-1">
+                  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample">
+                    Как купить?
+                  </a>
+
+                </p>
+                    <div class="collapse" id="collapseExample">
+                  <div class="card card-body mb-3">
+                      Есть над чем задуматься: интерактивные прототипы неоднозначны и будут смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Следует отметить, что глубокий уровень погружения способствует подготовке и реализации модели развития.
+                  </div>
+
+                    </div>
+                    <p class="d-flex gap-1">
+                      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="true" aria-controls="collapseExample">
+                        Как доставить?
+                      </a>
+
                     </p>
-                    <button type="button" class="w-100 btn btn-lg btn-success">Купить</button>
-                </div>
-            </div>
-        </div>
+                     <div class="collapse" id="collapseExample1">
+                      <div class="card card-body mb-3">
+                        С учётом сложившейся международной обстановки, синтетическое тестирование обеспечивает актуальность новых предложений. Банальные, но неопровержимые выводы, а также многие известные личности, превозмогая сложившуюся непростую экономическую ситуацию, в равной степени предоставлены сами себе.
+                      </div>
 
-        <div class="col-4">
-            <form>
-                <div class="mb-3 rounded-3">
-                    <label class="form-label ml-3">Имя</label>
-                    <input name="name" type="name" class="form-control" id="name">
-                </div>
-                <div class="mb-3 rounded-3">
-                    <label class="form-label ml-3">Email</label>
-                    <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                </div>
-                <button type="submit" class="btn btn-primary">Отправить</button>
-            </form>
-        </div>
 
-        <div class="col-12 mt-4">
-            <h2 class="text-center">FAQ</h2>
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="buyingHeading">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#buyingCollapse" aria-expanded="true" aria-controls="buyingCollapse">
-                            Как купить?
-                        </button>
-                    </h2>
-                    <div id="buyingCollapse" class="accordion-collapse collapse show" aria-labelledby="buyingHeading" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Способы покупки ....
-                        </div>
                     </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="shippingHeading">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#shippingCollapse" aria-expanded="true" aria-controls="shippingCollapse">
-                            Как доставить?
-                        </button>
-                    </h2>
-                    <div id="shippingCollapse" class="accordion-collapse collapse" aria-labelledby="shippingHeading" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Виды доставок
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="guaranteeHeading">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#guaranteeCollapse" aria-expanded="true" aria-controls="guaranteeCollapse">
+                        <p class="d-flex gap-1">
+                          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
                             Какая гарантия?
-                        </button>
-                    </h2>
-                    <div id="guaranteeCollapse" class="accordion-collapse collapse" aria-labelledby="guaranteeHeading" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Гарантия 1 год
+                          </a>
+                        </p>
+
+                        <div class="collapse" id="collapseExample2">
+                          <div class="card card-body mb-3">
+                            Также как существующая теория представляет собой интересный эксперимент проверки новых предложений. Для современного мира повышение уровня гражданского сознания говорит о возможностях модели развития.
+                          </div>
+
                         </div>
-                    </div>
+
+                          <<table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Номер</th>
+                              <th scope="col">Название товара</th>
+                              <th scope="col">Цена за штуку</th>
+                              <th scope="col">Количество</th>
+                              <th scope="col">Итоговая сумма</th>
+                              <th scope="col">Статус заказа</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Товар 1</td>
+                              <td>100</td>
+                              <td>5</td>
+                              <td>500</td>
+                              <td>
+                                  <div class="alert alert-warning" role="alert">
+                                    Обработка
+                                  </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>Товар 2</td>
+                              <td>50</td>
+                              <td>3</td>
+                              <td>150</td>
+                              <td>
+                                  <div class="alert alert-primary" role="alert">
+                                      Новый
+                                  </div>
+
+                              </td>
+
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>Товар 3</td>
+                              <td>80</td>
+                              <td>2</td>
+                              <td>160</td>
+                              <td>
+                                  <div class="alert alert-success" role="alert">
+                                      Обработан
+                                  </div>
+                              </td>
+                            </tr>
+                              <tr>
+                              <td>4</td>
+                              <td>Товар 4</td>
+                              <td>120</td>
+                              <td>1</td>
+                              <td>120</td>
+                              <td>
+                                  <div class="alert alert-danger" role="alert">
+                                      Отмена
+                                  </div>
+
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td>Товар 5</td>
+                              <td>70</td>
+                              <td>4</td>
+                              <td>280</td>
+                              <td>
+                                  <div class="alert alert-primary" role="alert">
+                                      Новый
+                                  </div>
+
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                 </div>
-            </div>
+            </main>
         </div>
 
-    </main>
-</div>
+
 
 </main>
 
